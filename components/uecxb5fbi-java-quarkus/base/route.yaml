@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: uecxb5fbi-java-quarkus
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: uecxb5fbi-java-quarkus 
+  name: uecxb5fbi-java-quarkus
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: uecxb5fbi-java-quarkus
+    weight: 100 
